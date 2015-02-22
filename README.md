@@ -2,4 +2,4 @@
 
 Shiny App: https://rfstest.shinyapps.io/hypertension/
 
-Presentation: 
+Presentation: http://rfstest.github.io/hypertension/hypertension.html
