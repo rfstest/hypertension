@@ -1,0 +1,44 @@
+---
+title: "Children Hypertension Check"
+author: "Rustem"
+output: ioslides_presentation
+---
+
+## Hypertension
+
+Hypertension (HTN) or high blood pressure is a chronic medical condition in which the blood pressure in the arteries is elevated.
+
+Hypertension puts strain on the heart, leading to hypertensive heart disease and coronary artery disease. Hypertension is also a major risk factor for stroke, aneurysms of the arteries, peripheral arterial disease and chronic kidney disease.
+
+## Diagnosis
+Hypertension is diagnosed, if the **daily average of the systolic blood pressure** is higher than the *maximum normal value*, which differs for boys and girls and depends on the height.
+
+The maximum normal values for different conditions are available in
+the `htn.csv` data set at the [repository][2].
+
+```{r }
+htn <- read.csv('htn.csv')
+```
+
+## Maximum Normal Value
+The following scatterplot can be used for determining the maximum normal value
+for a certain height for boys and girls.
+
+```{r echo=FALSE}
+library(ggplot2)
+
+gp <-ggplot(htn, aes(x=Height, y=Systolic, color=Gender))
+gp <- gp + geom_point(size=4)
+gp <- gp + scale_x_continuous(name='Height, cm')
+gp <- gp + scale_y_continuous(name='Systolic blood pressure, mmHg')
+print(gp)
+```
+
+## Children Hypertension Check App
+You can also use the [Children Hypertension Check ShinyApp][1] to determine,
+if a certain child has hypertension.
+
+
+[1]:    https://rfstest.shinyapps.io/hypertension/
+[2]:    https://github.com/rfstest/hypertension
+
